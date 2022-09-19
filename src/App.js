@@ -42,7 +42,7 @@ function App() {
               }
               catch{
                   inner.innerText = `Today ${i+1}교시 데이터값 없음`;
-              }
+              } 
           }})
   },[])
 
@@ -68,16 +68,19 @@ function App() {
           setSEM(Value);
         }
       }
-      SET();
   }
+
+  const onclick = () => {
+    SET();
+  }
+
   return (
     <div className="App">
-      <form>
         <input onChange={handleChange} placeholder="날짜를 입력하세요(YYYYMMDD)" type="number" ref={YMDInput}  id="i1"/>
         <input onChange={handleChange} placeholder="학년을 입력하세요(n)" type="number" ref={GRAInput} id="i2"/>
         <input onChange={handleChange} placeholder="반을 입력하세요(n)" type="number" ref={CLAInput} id="i3"/>
         <input onChange={handleChange} placeholder="학기를 입력하세요(n)" type="number" ref={SEMInput} id="i4"/> <p id='P'></p>
-      </form>
+        <button onClick={onclick}>제출 버튼</button>
       <ul>
           <li id="0">1교시 </li>
           <li id="1">2교시 </li>
